@@ -13,33 +13,32 @@
             },
             "presentation": {
                 "reveal": "always",
-                "panel": "dedicated"
+                "panel": "dedicated",
+                "revealProblems": "onProblem"
             },
             "problemMatcher": "$gcc",
         },
         {
             "label": "Upload",
             "type": "process",
-            "command": "${workspaceFolder}/scripts/copy_uf2.sh",
-            "args": [ "${workspaceFolder}/build/src/ayo_os.uf2" ],
+            "command": "python",
+            "args": [ "${workspaceFolder}/scripts/copy_uf2.py", "${workspaceFolder}/build/src/ayo_os.uf2" ],
             "dependsOn": [ "Build" ],
             "presentation": {
                 "reveal": "always",
-                "panel": "dedicated"
             },
             "problemMatcher": [],
+            "runOptions": {
+                "instanceLimit": 1
+            },
         },
         {
             "label": "Monitor",
-            "type": "shell",
-            "command": "${workspaceFolder}/scripts/serial_monitor.sh",
+            "type": "process",
+            "command": "python",
+            "args": [ "${workspaceFolder}/scripts/monitor.py" ],
             "presentation": {
-                "echo": true,
                 "reveal": "always",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true
             },
             "problemMatcher": [],
             "runOptions": {
