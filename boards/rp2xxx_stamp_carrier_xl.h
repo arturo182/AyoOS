@@ -78,6 +78,9 @@
 #define PICO_FLASH_SIZE_BYTES (16 * 1024 * 1024)
 #endif
 
+// --- PINS ---
+#define SFE_RP2350_XIP_CSI_PIN 8 // PSRAM
+
 #ifndef PICO_RP2350_A2_SUPPORTED
 #define PICO_RP2350_A2_SUPPORTED 1
 #endif

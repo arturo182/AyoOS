@@ -10,4 +10,5 @@ project(ayo_os)
 
 pico_sdk_init()
 
+add_subdirectory(3rdparty/sparkfun-pico/sparkfun_pico)
 add_subdirectory(src)

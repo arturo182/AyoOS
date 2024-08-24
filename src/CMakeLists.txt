@@ -7,12 +7,8 @@ add_compile_options(-Wall -Wextra -Wpedantic)
 target_include_directories(ayo_os PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 
 target_link_libraries(ayo_os
-    #cmsis_core
-    #hardware_i2c
-    #hardware_pwm
-    #pico_bootsel_via_double_reset
+    sparkfun_pico
     pico_stdlib
-#    tinyusb_device
 )
 
 # binary info in flash
