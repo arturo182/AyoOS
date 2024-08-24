@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "process",
+            "isBuildCommand": true,
+            "command": "ninja",
+            "args": [ "-C", "${workspaceFolder}/build" ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": "$gcc",
+        },
+        {
+            "label": "Upload",
+            "type": "process",
+            "command": "${workspaceFolder}/scripts/copy_uf2.sh",
+            "args": [ "${workspaceFolder}/build/src/ayo_os.uf2" ],
+            "dependsOn": [ "Build" ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "Monitor",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/serial_monitor.sh",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "instanceLimit": 1
+            },
+        },
+        {
+            "label": "Upload and Monitor",
+            "dependsOn": [
+                "Upload",
+                "Monitor",
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": [],
+        },
+    ]
+}
