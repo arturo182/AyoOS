@@ -8,6 +8,7 @@ target_include_directories(ayo_os PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 
 target_link_libraries(ayo_os
     sparkfun_pico
+    lvgl
     pico_stdlib
 )
 

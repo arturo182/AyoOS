@@ -10,5 +10,8 @@ project(ayo_os)
 
 pico_sdk_init()
 
+set(LV_CONF_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src/lv_conf.h CACHE STRING "" FORCE)
+
 add_subdirectory(3rdparty/sparkfun-pico/sparkfun_pico)
+add_subdirectory(3rdparty/lvgl)
 add_subdirectory(src)

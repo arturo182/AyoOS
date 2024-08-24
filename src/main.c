@@ -1,3 +1,4 @@
+#include <lvgl.h>
 #include <pico/stdlib.h>
 #include <sfe_pico.h>
 #include <stdio.h>
@@ -14,6 +15,11 @@ int main(void)
     } else {
         printf("PSRAM not detected\n");
     }
+
+    printf("Using LVGL v%d.%d.%d\n", lv_version_major(), lv_version_minor(), lv_version_patch());
+
+    lv_init();
+    lv_tick_set_cb(time_us_32);
 
     while (true) {
         printf("Hello, world!\n");

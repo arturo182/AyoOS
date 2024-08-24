@@ -4,3 +4,6 @@
 [submodule "3rdparty/sparkfun-pico"]
 	path = 3rdparty/sparkfun-pico
 	url = https://github.com/sparkfun/sparkfun-pico
+[submodule "3rdparty/lvgl"]
+	path = 3rdparty/lvgl
+	url = https://github.com/lvgl/lvgl.git
